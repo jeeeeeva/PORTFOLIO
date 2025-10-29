@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jyothika D | Full Stack Developer</title>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <style>
+        /* ----- POPPINS FONT ----- */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+        /* ----- VARIABLES ----- */
+        :root{
+            --body-color: #0a192f;
+            --color-white: #ffffff;
+            --text-color-second: #ccd6f6;
+            --text-color-third: #64ffda;
+            --first-color: #64ffda;
+            --first-color-hover: #4fd3b0;
+            --second-color: #112240;
+            --third-color: #233554;
+            --first-shadow-color: rgba(2,12,27,0.7);
+            --card-bg: #112240;
+        }
+
+        /* ----- BASE ----- */
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        html{
+            scroll-behavior: smooth;
+        }
+
+        body{
+            background: var(--body-color);
+            color: var(--text-color-second);
+            overflow-x: hidden;
+        }
+
+        .container{
+            width: 100%;
+            position: relative;
+        }
+
+        /* ----- NAVIGATION BAR ----- */
+        nav{
+            position: fixed;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            height: 90px;
+            line-height: 90px;
+            background: rgba(10, 25, 47, 0.85);
+            backdrop-filter: blur(10px);
+            padding-inline: 9vw;
+            transition: .3s;
+            z-index: 100;
+        }
+
+        .nav-logo{
+           position: relative;
+        }
+
+        .nav-name{
+            font-size: 30px;
+            font-weight: 600;
+            color: var(--text-color-third);
+        }
+
+        .nav-menu, .nav_menu_list{
+            display: flex;
+        }
+
+        .nav-menu .nav_list{
+            list-style: none;
+            position: relative;
+        }
+
+        .nav-link{
+            text-decoration: none;
+            color: var(--text-color-second);
+            font-weight: 500;
+            padding-inline: 15px;
+            margin-inline: 20px;
+            transition: .3s;
+        }
+
+        .nav-link:hover {
+            color: var(--first-color);
+        }
+
+        .nav-menu-btn{
+            display: none;
+        }
+
+        .nav-menu-btn i{
+            font-size: 28px;
+            cursor: pointer;
+            color: var(--first-color);
+        }
+
+        .active-link{
+            color: var(--first-color);
+        }
+
+        /* ----- WRAPPER DESIGN ----- */
+        .wrapper{
+            padding-inline: 10vw;
+        }
+
+        /* ----- FEATURED BOX ----- */
+        .featured-box{
+            position: relative;
+            display: flex;
+            height: 100vh;
+            min-height: 700px;
+        }
+
+        /* ----- FEATURED TEXT BOX ----- */
+        .featured-text{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            min-height: 80vh;
+            flex-direction: column;
+            width: 100%;
+            padding-left: 20px;
+        }
+
+        .featured-text-card span{
+            background: var(--third-color);
+            color: var(--first-color);
+            padding: 3px 8px;
+            font-size: 12px;
+            border-radius: 5px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .featured-name{
+            font-size: 50px;
+            font-weight: 600;
+            color: var(--color-white);
+            margin-block: 20px;
+        }
+
+        .typedText{
+            text-transform: capitalize;
+            color: var(--text-color-third);
+        }
+
+        .featured-text-info{
+            font-size: 16px;
+            margin-bottom: 30px;
+            color: var(--text-color-second);
+            line-height: 1.6;
+            max-width: 90%;
+        }
+
+        .featured-text-btn{
+            display: flex;
+            gap: 20px;
+        }
+
+        .btn{
+            font-weight: 500;
+            padding: 12px 20px;
+            background: var(--first-color);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: .4s;
+            color: var(--body-color);
+            font-weight: 600;
+        }
+
+        .btn>i{
+            margin-left: 10px;
+        }
+
+        .btn:hover{
+            background: var(--first-color-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(100, 255, 218, 0.2);
+        }
+
+        .social_icons{
+            display: flex;
+            margin-top: 3em;
+            gap: 20px;
+        }
+
+        .icon{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            border: 2px solid var(--text-color-second);
+            color: var(--text-color-second);
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        .icon:hover{
+            color: var(--first-color);
+            border-color: var(--first-color);
+            transform: translateY(-5px);
+        }
+
+        /* ----- MAIN BOX ----- */
+        .section{
+            padding-block: 5em;
+        }
+
+        .row{
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            gap: 50px;
+        }
+
+        .col{
+            display: flex;
+            width: 50%;
+        }
+
+        /* -- ## --- RESUABLE CSS -- ## -- */
+        .top-header{
+            text-align: center;
+            margin-bottom: 5em;
+        }
+
+        .top-header h1{
+            font-weight: 600;
+            color: var(--color-white);
+            margin-bottom: 10px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .top-header h1::after {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 2px;
+            background: var(--first-color);
+            bottom: -10px;
+            left: 20%;
+        }
+
+        .top-header span{
+            color: var(--text-color-second);
+        }
+
+        h3{
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--color-white);
+            margin-bottom: 15px;
+        }
+
+        /* ----- ABOUT INFO ----- */
+        .about-info{
+            position: relative;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            padding-block: 30px;
+            padding-inline: 20px;
+            width: 100%;
+            background: var(--card-bg);
+            box-shadow: 0 10px 30px -15px var(--first-shadow-color);
+            border-radius: 10px;
+            transition: .3s;
+        }
+
+        .about-info:hover {
+            transform: translateY(-10px);
+        }
+
+        .about-info p{
+            text-align: center;
+            font-size: 15px;
+            color: var(--text-color-second);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        /* ----- ABOUT / SKILLS BOX ----- */
+        .skills-box{
+            margin: 10px;
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px -15px var(--first-shadow-color);
+            transition: .3s;
+        }
+
+        .skills-box:hover {
+            transform: translateY(-5px);
+        }
+
+        .skills-header{
+            margin-bottom: 30px;
+        }
+
+        .skills-list{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skills-list span{
+            font-size: 14px;
+            background: var(--third-color);
+            color: var(--first-color);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 500;
+            transition: .3s;
+        }
+
+        .skills-list span:hover {
+            background: var(--first-color);
+            color: var(--body-color);
+        }
+
+        /* ----- PROJECTS BOX ----- */
+        .project-container{
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .project-box{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 30%;
+            min-height: 300px;
+            background: var(--card-bg);
+            border-radius: 10px;
+            box-shadow: 0 10px 30px -15px var(--first-shadow-color);
+            overflow: hidden;
+            transition: .3s;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .project-box:hover {
+            transform: translateY(-10px);
+        }
+
+        .project-box>i{
+            font-size: 50px;
+            color: var(--first-color);
+            margin-bottom: 25px;
+        }
+
+        .project-box h3 {
+            color: var(--color-white);
+            margin-bottom: 15px;
+        }
+
+        .project-box label{
+            font-size: 15px;
+            color: var(--text-color-second);
+            line-height: 1.6;
+        }
+
+        /* ----- EXPERIENCE SECTION ----- */
+        .experience-container {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            width: 100%;
+        }
+
+        .experience-box {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px -15px var(--first-shadow-color);
+            transition: .3s;
+        }
+
+        .experience-box:hover {
+            transform: translateY(-5px);
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+
+        .experience-title {
+            font-size: 20px;
+            color: var(--first-color);
+            font-weight: 600;
+        }
+
+        .experience-company {
+            font-size: 18px;
+            color: var(--color-white);
+            font-weight: 500;
+        }
+
+        .experience-duration {
+            color: var(--text-color-second);
+            font-size: 14px;
+        }
+
+        .experience-details {
+            color: var(--text-color-second);
+            line-height: 1.6;
+        }
+
+        .experience-details ul {
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+
+        .experience-details li {
+            margin-bottom: 8px;
+        }
+
+        /* ----- CONTACT BOX ----- */
+        .contact-info{
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+            width: 100%;
+            height: 315px;
+            background: var(--card-bg);
+            border-radius: 10px;
+            box-shadow: 0 10px 30px -15px var(--first-shadow-color);
+            overflow: hidden;
+            transition: .3s;
+        }
+
+        .contact-info:hover {
+            transform: translateY(-10px);
+        }
+
+        .contact-info>h2{
+            color: var(--color-white);
+            margin-bottom: 20px;
+        }
+
+        .contact-info>p{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-color-second);
+            margin-block: 5px;
+        }
+
+        .contact-info p>i{
+            font-size: 18px;
+            color: var(--first-color);
+        }
+
+        /* ----- CONTACT FORM ----- */
+        .form-control{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 100%;
+        }
+
+        .form-inputs{
+            display: flex;
+            gap: 20px;
+            width: 100%;
+        }
+
+        .input-field{
+            width: 50%;
+            height: 55px;
+            background: transparent;
+            border: 2px solid var(--third-color);
+            border-radius: 5px;
+            padding-inline: 20px;
+            outline: none;
+            color: var(--text-color-second);
+            transition: .3s;
+        }
+
+        .input-field:focus {
+            border-color: var(--first-color);
+        }
+
+        textarea{
+            width: 100%;
+            height: 200px;
+            background: transparent;
+            border: 2px solid var(--third-color);
+            border-radius: 5px;
+            padding: 15px 20px;
+            outline: none;
+            resize: none;
+            color: var(--text-color-second);
+            transition: .3s;
+        }
+
+        textarea:focus {
+            border-color: var(--first-color);
+        }
+
+        /* ----- FOOTER BOX ----- */
+        footer{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            row-gap: 30px;
+            background: var(--card-bg);
+            padding-block: 40px 60px;
+            margin-top: 50px;
+        }
+
+        .top-footer p{
+            font-size: 25px;
+            font-weight: 600;
+            color: var(--first-color);
+        }
+
+        .middle-footer .footer-menu{
+            display: flex;
+        }
+
+        .footer_menu_list{
+            list-style: none;
+        }
+
+        .footer_menu_list a{
+            text-decoration: none;
+            color: var(--text-color-second);
+            font-weight: 500;
+            margin-inline: 20px;
+            transition: .3s;
+        }
+
+        .footer_menu_list a:hover {
+            color: var(--first-color);
+        }
+
+        .footer-social-icons{
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-social-icons .icon {
+            width: 40px;
+            height: 40px;
+        }
+
+        .bottom-footer{
+            font-size: 14px;
+            margin-top: 10px;
+            color: var(--text-color-second);
+        }
+
+        .bottom-footer a {
+            color: var(--first-color);
+        }
+
+        /* ----- MEDIA QUERY == 900px / RESPONSIVE ----- */
+        @media only screen and (max-width: 900px) {
+            .nav-button{
+                display: none;
+            }
+
+            .nav-menu.responsive{
+                left: 0;
+            }
+
+            .nav-menu{
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                background: rgba(17, 34, 64, 0.95);
+                backdrop-filter: blur(20px);
+                width: 100%;
+                min-height: 450px;
+                height: 90vh;
+                transition: .3s;
+            }
+
+            .nav_menu_list{
+                flex-direction: column;
+            }
+
+            .nav-menu-btn{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .featured-box{
+                flex-direction: column;
+                justify-content: center;
+                height: 100vh;
+            }
+
+            .featured-text{
+                width: 100%;
+                order: 2;
+                justify-content: center;
+                align-content: flex-start;
+                min-height: 60vh;
+                text-align: center;
+                padding-left: 0;
+            }
+
+            .featured-text-info {
+                max-width: 100%;
+            }
+
+            .social_icons{
+                margin-top: 2em;
+                justify-content: center;
+            }
+
+            .row{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                gap: 50px;
+            }
+
+            .col{
+                display: flex;
+                justify-content: center;
+                width: 100%;
+            }
+
+            .about-info, .contact-info{
+                width: 100%;
+            }
+
+            .project-container{
+                justify-content: center;
+            }
+
+            .project-box{
+                width: 80%;
+            }
+
+            .experience-header {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+
+        /* ----- MEDIA QUERY == 540px / RESPONSIVE ----- */
+        @media only screen and (max-width: 540px){
+            .featured-name{
+                font-size: 40px;
+            }
+
+            .project-box{
+                width: 100%;
+            }
+
+            .form-inputs{
+                flex-direction: column;
+            }
+
+            .input-field{
+                width: 100%;
+            }
+
+            .nav-name {
+                font-size: 24px;
+            }
+
+            .wrapper {
+                padding-inline: 5vw;
+            }
+        }
+    </style>
+</head>
+<body>
+   <div class="container">
+    <!-- --------------- HEADER --------------- -->
+      <nav id="header">
+        <div class="nav-logo">
+            <p class="nav-name">JD</p>
+        </div>
+        <div class="nav-menu" id="myNavMenu">
+            <ul class="nav_menu_list">
+                <li class="nav_list">
+                    <a href="#home" class="nav-link active-link">Home</a>
+                </li>
+                <li class="nav_list">
+                    <a href="#about" class="nav-link">About</a>
+                </li>
+                <li class="nav_list">
+                    <a href="#experience" class="nav-link">Experience</a>
+                </li>
+                <li class="nav_list">
+                    <a href="#projects" class="nav-link">Projects</a>
+                </li>
+                <li class="nav_list">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+        </div>
+       
+        <div class="nav-menu-btn">
+            <i class="uil uil-bars" onclick="myMenuFunction()"></i>
+        </div>
+      </nav>
+
+    <!-- -------------- MAIN ---------------- -->
+    <main class="wrapper">
+       <!-- -------------- FEATURED BOX ---------------- -->
+       <section class="featured-box" id="home">
+          <div class="featured-text">
+            <div class="featured-text-card">
+                <span>Jyothika D</span>
+            </div>
+            <div class="featured-name">
+                <p>I'm a <span class="typedText"></span></p>
+            </div>
+            <div class="featured-text-info">
+                <p>Full Stack Developer with hands-on experience in designing, developing, and deploying responsive web applications. Skilled in front-end and back-end technologies including HTML, CSS, JavaScript, Python, Django, and Firebase.</p>
+            </div>
+            <div class="featured-text-btn">
+                <button class="btn" onclick="location.href='#projects'">View Projects</button>
+                <button class="btn" onclick="location.href='#contact'">Contact Me</button>
+            </div>
+            <div class="social_icons">
+                <a href="https://www.linkedin.com/in/jyothika-d-799906323/" target="_blank"> 
+                <div class="icon"><i class="uil uil-linkedin-alt"></i></div>
+                </a>
+                <a href="https://github.com/jeeeeeva" target="_blank">
+                <div class="icon"><i class="uil uil-github-alt"></i></div>
+                </a>
+            </div>
+          </div>
+       </section>
+
+       <!-- -------------- ABOUT BOX ---------------- -->
+       <section class="section" id="about">
+          <div class="top-header">
+            <h1>About Me</h1>
+          </div>
+          <div class="row">
+            <div class="col">
+                <div class="about-info">
+                    <h3>My Introduction</h3>
+                    <p>I am a passionate Full-Stack Web Developer with expertise in both frontend and backend technologies. I enjoy creating seamless user experiences with clean, efficient code. My goal is to build applications that are not only functional but also visually appealing and user-friendly.</p>
+                    <p>When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or designing creative solutions to complex problems.</p>
+                    <div class="about-btn">
+                        <button class="btn" onclick="window.open('Jyothika_D_CV.pdf', '_blank')">Download CV</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="skills-box">
+                    <div class="skills-header">
+                        <h3>Frontend</h3>
+                    </div>
+                    <div class="skills-list">
+                        <span>HTML5</span>
+                        <span>CSS3</span>
+                        <span>JavaScript</span>
+                        <span>jQuery</span>
+                        <span>React</span>
+                        <span>Tailwind CSS</span>
+                        <span>Bootstrap</span>
+                        <span>Material-UI</span>
+                    </div>
+                </div>
+                <div class="skills-box">
+                    <div class="skills-header">
+                        <h3>Backend</h3>
+                    </div>
+                    <div class="skills-list">
+                        <span>Python</span>
+                        <span>Django</span>
+                        <span>Firebase</span>
+                    </div>
+                </div>
+                <div class="skills-box">
+                    <div class="skills-header">
+                        <h3>Database & Tools</h3>
+                    </div>
+                    <div class="skills-list">
+                        <span>MySQL</span>
+                        <span>SQLite</span>
+                        <span>Git</span>
+                        <span>GitHub</span>
+                        <span>VS Code</span>
+                        <span>Figma</span>
+                        <span>Canva</span>
+                    </div>
+                </div>
+            </div>
+          </div>
+       </section>
+
+       <!-- -------------- EXPERIENCE BOX ---------------- -->
+       <section class="section" id="experience">
+          <div class="top-header">
+              <h1>Professional Experience</h1>
+          </div>
+          <div class="experience-container">
+            <div class="experience-box">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">Full Stack Developer - Intern</div>
+                        <div class="experience-company">Indiquer Global Services</div>
+                    </div>
+                    <div class="experience-duration">2023</div>
+                </div>
+                <div class="experience-details">
+                    <p>Worked on multiple full-stack development projects including:</p>
+                    <ul>
+                        <li>HRMS (Human Resource Management System)</li>
+                        <li>ERP Website</li>
+                        <li>Billing Software</li>
+                        <li>Indiquer Global Services Company Website</li>
+                    </ul>
+                    <p>Gained hands-on experience in Python, Django, Firebase, MySQL, HTML, CSS, and JavaScript, focusing on both front-end and back-end integration.</p>
+                </div>
+            </div>
+            
+            <div class="experience-box">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">Freelance Web Developer</div>
+                        <div class="experience-company">Spectoeyes - Company Website</div>
+                    </div>
+                    <div class="experience-duration">2023</div>
+                </div>
+                <div class="experience-details">
+                    <ul>
+                        <li>Designed and developed the official company website for Spectoeyes</li>
+                        <li>Ensured a responsive, user-friendly interface</li>
+                        <li>Integrated modern frontend technologies for intuitive layouts and seamless navigation</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="experience-box">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">Freelance Developer</div>
+                        <div class="experience-company">Waffle N Fries - Billing Software</div>
+                    </div>
+                    <div class="experience-duration">2023</div>
+                </div>
+                <div class="experience-details">
+                    <ul>
+                        <li>Developed a responsive billing interface for Waffle N Fries</li>
+                        <li>Streamlined invoice generation and customer management</li>
+                        <li>Front-end built using HTML, CSS, and JavaScript with focus on intuitive user experience</li>
+                        <li>Collaborated with backend systems to enable real-time billing operations</li>
+                    </ul>
+                </div>
+            </div>
+          </div>
+       </section>
+
+       <!-- -------------- PROJECT BOX ---------------- -->
+       <section class="section" id="projects">
+          <div class="top-header">
+              <h1>My Projects</h1>
+          </div>
+          <div class="project-container">
+            <div class="project-box">
+                <i class="uil uil-credit-card"></i>
+                <h3>Payment Gateway Integration</h3>
+                <label>Successfully implemented Razorpay Payment Gateway using React, enabling secure online transactions with a seamless user experience.</label>
+            </div>
+            <div class="project-box">
+                <i class="uil uil-shopping-bag"></i>
+                <h3>E-commerce Shoe Website</h3>
+                <label>Developed a complete shoe e-commerce website using frontend technologies with product catalog, cart functionality, and responsive design.</label>
+            </div>
+            <div class="project-box">
+                <i class="uil uil-estate"></i>
+                <h3>Furniture Static Website</h3>
+                <label>Built a responsive static website with HTML, CSS, and JavaScript for furniture product showcase with modern UI/UX design.</label>
+            </div>
+            <div class="project-box">
+                <i class="uil uil-users-alt"></i>
+                <h3>HRMS System</h3>
+                <label>Developed a Human Resource Management System during internship with employee management, attendance tracking, and payroll features.</label>
+            </div>
+            <div class="project-box">
+                <i class="uil uil-chart-bar"></i>
+                <h3>ERP Website</h3>
+                <label>Contributed to an Enterprise Resource Planning website with modules for inventory, sales, and customer relationship management.</label>
+            </div>
+            <div class="project-box">
+                <i class="uil uil-invoice"></i>
+                <h3>Billing Software</h3>
+                <label>Created comprehensive billing software with invoice generation, customer management, and reporting features for business operations.</label>
+            </div>
+          </div>
+       </section>
+
+       <!-- -------------- CONTACT BOX ---------------- -->
+       <section class="section" id="contact">
+          <div class="top-header">
+            <h1>Get in Touch</h1>
+            <span>Do you have a project in your mind? Contact me here</span>
+          </div>
+          <div class="row">
+             <div class="col">
+                <div class="contact-info">
+                    <h2>Contact Information</h2>
+                    <p><i class="uil uil-envelope"></i> Email: celryjyothika@gmail.com</p>
+                    <p><i class="uil uil-phone"></i> Phone: +91 7975466613</p>
+                    <p><i class="uil uil-map-marker"></i> Location: Bengaluru, India</p>
+                    <p><i class="uil uil-linkedin"></i> LinkedIn: linkedin.com/in/jyothika</p>
+                </div>
+             </div>
+             <div class="col">
+                <div class="form-control">
+                    <div class="form-inputs">
+                        <input type="text" class="input-field" placeholder="Name">
+                        <input type="text" class="input-field" placeholder="Email">
+                    </div>
+                    <div class="text-area">
+                        <textarea placeholder="Message"></textarea>
+                    </div>
+                    <div class="form-button">
+                        <button class="btn">Send Message</button>
+                    </div>
+                </div>
+             </div>
+          </div>
+       </section>
+    </main>
+
+    <!-- --------------- FOOTER --------------- -->
+    <footer>
+        <div class="top-footer">
+            <p>Jyothika D</p>
+        </div>
+        <div class="middle-footer">
+            <ul class="footer-menu">
+                <li class="footer_menu_list">
+                    <a href="#home">Home</a>
+                </li>
+                <li class="footer_menu_list">
+                    <a href="#about">About</a>
+                </li>
+                <li class="footer_menu_list">
+                    <a href="#experience">Experience</a>
+                </li>
+                <li class="footer_menu_list">
+                    <a href="#projects">Projects</a>
+                </li>
+                <li class="footer_menu_list">
+                    <a href="#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer-social-icons">
+            <a href="https://www.linkedin.com/in/jyothika-d-799906323/" target="_blank"> 
+                <div class="icon"><i class="uil uil-linkedin-alt"></i></div>
+            </a>
+            <a href="https://github.com/jeeeeeva" target="_blank">
+                <div class="icon"><i class="uil uil-github-alt"></i></div>
+            </a>
+        </div>
+        <div class="bottom-footer">
+            <p>Copyright &copy; <a href="#home">Jyothika D</a> - All rights reserved</p>
+        </div>
+    </footer>
+   </div>
+
+   <!-- ----- TYPING JS Link ----- -->
+   <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+
+   <!-- ----- SCROLL REVEAL JS Link----- -->
+   <script src="https://unpkg.com/scrollreveal"></script>
+
+   <!-- ----- MAIN JS ----- -->
+   <script>
+        /* ----- NAVIGATION BAR FUNCTION ----- */
+        function myMenuFunction(){
+            var menuBtn = document.getElementById("myNavMenu");
+
+            if(menuBtn.className === "nav-menu"){
+              menuBtn.className += " responsive";
+            } else {
+              menuBtn.className = "nav-menu";
+            }
+        }
+
+        /* ----- ADD SHADOW ON NAVIGATION BAR WHILE SCROLLING ----- */
+        window.onscroll = function() {headerShadow()};
+
+        function headerShadow() {
+            const navHeader =document.getElementById("header");
+
+            if (document.body.scrollTop > 50 || document.documentElement.scrollTop >  50) {
+              navHeader.style.boxShadow = "0 1px 6px rgba(0, 0, 0, 0.1)";
+              navHeader.style.height = "70px";
+              navHeader.style.lineHeight = "70px";
+            } else {
+              navHeader.style.boxShadow = "none";
+              navHeader.style.height = "90px";
+              navHeader.style.lineHeight = "90px";
+            }
+        }
+
+        /* ----- TYPING EFFECT ----- */
+        var typingEffect = new Typed(".typedText",{
+            strings : ["Full-Stack Developer", "Web Designer", "Python/Django Developer"],
+            loop : true,
+            typeSpeed : 100, 
+            backSpeed : 80,
+            backDelay : 2000
+        })
+
+        /* ----- ## -- SCROLL REVEAL ANIMATION -- ## ----- */
+        const sr = ScrollReveal({
+            origin: 'top',
+            distance: '80px',
+            duration: 2000,
+            reset: true     
+        })
+
+        /* -- HOME -- */
+        sr.reveal('.featured-text-card',{})
+        sr.reveal('.featured-name',{delay: 100})
+        sr.reveal('.featured-text-info',{delay: 200})
+        sr.reveal('.featured-text-btn',{delay: 200})
+        sr.reveal('.social_icons',{delay: 200})
+
+        /* -- PROJECT BOX -- */
+        sr.reveal('.project-box',{interval: 200})
+
+        /* -- EXPERIENCE BOX -- */
+        sr.reveal('.experience-box',{interval: 200})
+
+        /* -- HEADINGS -- */
+        sr.reveal('.top-header',{})
+
+        /* ----- ## -- SCROLL REVEAL LEFT_RIGHT ANIMATION -- ## ----- */
+        /* -- ABOUT INFO & CONTACT INFO -- */
+        const srLeft = ScrollReveal({
+            origin: 'left',
+            distance: '80px',
+            duration: 2000,
+            reset: true
+        })
+
+        srLeft.reveal('.about-info',{delay: 100})
+        srLeft.reveal('.contact-info',{delay: 100})
+
+        /* -- ABOUT SKILLS & FORM BOX -- */
+        const srRight = ScrollReveal({
+            origin: 'right',
+            distance: '80px',
+            duration: 2000,
+            reset: true
+        })
+
+        srRight.reveal('.skills-box',{delay: 100})
+        srRight.reveal('.form-control',{delay: 100})
+
+        /* ----- CHANGE ACTIVE LINK ----- */
+        const sections = document.querySelectorAll('section[id]')
+
+        function scrollActive() {
+            const scrollY = window.scrollY;
+
+            sections.forEach(current =>{
+                const sectionHeight = current.offsetHeight,
+                    sectionTop = current.offsetTop - 50,
+                    sectionId = current.getAttribute('id')
+
+                if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) { 
+                    document.querySelector('.nav-menu a[href*=' + sectionId + ']').classList.add('active-link')
+                } else {
+                    document.querySelector('.nav-menu a[href*=' + sectionId + ']').classList.remove('active-link')
+                }
+            })
+        }
+
+        window.addEventListener('scroll', scrollActive)
+
+        /* ----- CONTACT FORM SUBMISSION ----- */
+        document.querySelector('.form-button .btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            const name = document.querySelector('.input-field[placeholder="Name"]').value;
+            const email = document.querySelector('.input-field[placeholder="Email"]').value;
+            const message = document.querySelector('textarea').value;
+            
+            if(name && email && message) {
+                alert('Thank you for your message! I will get back to you soon.');
+                document.querySelector('.input-field[placeholder="Name"]').value = '';
+                document.querySelector('.input-field[placeholder="Email"]').value = '';
+                document.querySelector('textarea').value = '';
+            } else {
+                alert('Please fill in all fields before sending.');
+            }
+        });
+   </script>
+</body>
+</html>
